@@ -1,6 +1,30 @@
+const sections = document.querySelectorAll(".oooooooooooooh-snap");
 
-gsap.from('#wn path', {
-    duration: 1.5,
-    drawSVG: 0,
-    stagger: 0.5,
+let options = {
+  threshold: .5
+};
+
+let callback = entries => {
+	entries.forEach((entry) => {
+  	const intersecting = entry.isIntersecting		
+		
+        if(intersecting) {
+			const huidigeSpreker = document.querySelector(".current");
+            const nieuweSpreker = document.querySelector("[href='#" + deSection.id + "']");
+
+            if(huidigeSpreker) {
+				huidigeSpreker.classList.remove("current");
+			}
+						
+			if(nieuweSpreker) {
+				nieuweSpreker.classList.add("current");
+			}
+  	    };
+	})
+};
+
+let observer = new IntersectionObserver(callback, options);
+
+sections.forEach(section => {
+	observer.observe(section);
 });

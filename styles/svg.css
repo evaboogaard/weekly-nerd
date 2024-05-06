@@ -1,7 +1,17 @@
 #wn{
     width: 60%;
-	fill:none;
 	stroke:var(--primary-color);
 	stroke-width:1;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
     filter: drop-shadow(.1rem .1rem 0 gray);
+    animation: dash 5s linear forwards;
+    fill: rgba(0, 0, 0, 0);
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+        fill: rgb(166, 166, 166);
+    }
 }
