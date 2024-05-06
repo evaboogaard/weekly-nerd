@@ -1,0 +1,107 @@
+nav ul {
+    position: fixed;
+    height: 80vh;
+    top: 10vh;
+    left: 2vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-right: 2rem;
+    z-index: 4000;
+
+    li {
+        list-style: none;
+        font-family: monospace;
+        position: relative;
+        flex-basis: 0;
+        flex-grow: 1;
+        padding: 0.25rem;
+
+        @media (prefers-reduced-motion: no-preference) {
+        transition: var(--transition-short);
+        }
+
+        a {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        outline: 1.5px solid black;
+        border-radius: 0.2rem;
+        padding: 0.5rem;
+        background-color: white;
+
+        @media (prefers-reduced-motion: no-preference) {
+            transition: var(--transition-short);
+        }
+
+            &.current {
+                background-color: black;
+                color: white;
+            }
+
+            &:focus {
+                outline: 1.5px dashed white;
+                box-shadow: 0 0 0.5rem black;
+            }
+        }
+
+            &::before {
+            --width: 0.5rem;
+            content: '';
+            position: absolute;
+            background-color: black;
+            width: var(--width);
+            height: 0.1rem;
+            left: calc(var(--width) * -1);
+            top: 50%;
+            transition: var(--transition-short);
+            }
+        }
+    }
+
+    li:has(+ li + li:hover) {
+    flex-grow: 1.2;
+
+        a {
+            background-color: #c9c9c9;
+        }
+    }
+
+    li:has(+ li:hover) {
+    flex-grow: 2;
+
+        a {
+            background-color: #a4a4a4;
+        }
+    }
+
+    li:hover {
+    flex-grow: 3;
+
+        &::before {
+            --width: 1rem;
+        }
+
+        a {
+            color: white;
+            background-color: #797979;
+        }
+    }
+
+    li:hover + li {
+    flex-grow: 2;
+
+        a {
+            background-color: #a4a4a4;
+        }
+    }
+
+    li:hover + li + li {
+    flex-grow: 1.2;
+
+        a {
+            background-color: #c9c9c9;
+        }
+    }

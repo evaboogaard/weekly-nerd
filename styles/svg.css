@@ -1,0 +1,7 @@
+#wn{
+    width: 60%;
+	fill:none;
+	stroke:var(--primary-color);
+	stroke-width:1;
+    filter: drop-shadow(.1rem .1rem 0 gray);
+}
