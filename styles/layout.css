@@ -29,8 +29,10 @@ main{
     padding: 3rem;
     width: clamp(20rem, 20vw, 40rem);
     position: relative;
-    background-color: rgb(213, 213, 213);
+    background-color: var(--light-gray);
     border-radius: 0 0 .5rem .5rem;
+    box-shadow: 0 0 3rem black;
+
 
     &::before {
         content: '';
@@ -79,3 +81,151 @@ main{
     }
 
 }
+
+#vakken{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 5rem;
+    position: relative;
+
+    >label{
+        width: 20vw;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: var(--transition-base);
+        cursor: pointer;
+        position: relative;
+
+        &:first-of-type img{
+            animation-delay: -5s;
+        }
+
+        &:nth-of-type(2) img{
+            animation-delay: -15s;
+        }
+
+        &:nth-of-type(3) img{
+            animation-delay: -1s;
+        }
+
+        &:nth-of-type(4) img{
+            animation-delay: -25s;
+        }
+
+        &:nth-of-type(5) img{
+            animation-delay: -20s;
+        }
+
+        &:hover{
+            opacity: 0.8;
+            scale: 1.1;
+        }
+
+        img{
+            aspect-ratio: 1;
+            object-fit: cover;
+            width: 100%;
+            animation: rad-move 30s infinite linear;
+            transition: var(--transition-base);
+        }
+    }
+}
+
+.content{
+    position: absolute;
+    background-color: var(--light-gray);
+    width: 60vw;
+    left: 10vw;
+    z-index: 100;
+    display: none;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 0 3rem black;
+    border-radius: 0 0 .5rem .5rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -1rem;
+        left: 0;
+        height: 1rem;
+        width: 100%;
+        border-radius: .5rem .5rem 0 0;
+        background-color: gray;
+        background-image: radial-gradient(
+            circle at 1rem center,
+            red 0 0.25rem,
+            transparent 0.25rem 100%
+          ),
+          radial-gradient(
+            circle at 2rem center,
+            orange 0 0.25rem,
+            transparent 0.25rem 100%
+          ),
+          radial-gradient(
+            circle at 3rem center,
+            lawngreen 0 0.25rem,
+            transparent 0.25rem 100%
+          );
+      }
+}
+
+@keyframes rad-move {
+    0%{ border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+    10%{ border-radius: 53% 47% 33% 67% / 60% 30% 70% 40%; }
+    20%{ border-radius: 71% 29% 38% 62% / 72% 48% 52% 28%; }
+    30%{ border-radius: 41% 59% 45% 55% / 33% 56% 44% 67%; }
+    40%{ border-radius: 55% 45% 67% 33% / 77% 48% 52% 23%; }
+    50%{ border-radius: 44% 56% 22% 78% / 31% 74% 26% 69%; }
+    60%{ border-radius: 46% 54% 48% 52% / 61% 59% 41% 39%; }
+    70%{ border-radius: 44% 56% 60% 40% / 63% 36% 64% 37%; }
+    80%{ border-radius: 20% 80% 45% 55% / 31% 79% 21% 69%; }
+    90%{ border-radius: 66% 34% 57% 43% / 49% 51% 49% 51%; }
+    100%{ border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  }
+
+  #reflectie{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    >div{
+        max-width: 50vw;
+        background-color: var(--light-gray);
+        padding: 4rem;
+        box-shadow: 0 0 3rem black;
+        margin-left: 5rem;
+        position: relative;
+        border-radius: 0 0 .5rem .5rem;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: -1rem;
+            left: 0;
+            height: 1rem;
+            width: 100%;
+            border-radius: .5rem .5rem 0 0;
+            background-color: gray;
+            background-image: radial-gradient(
+                circle at 1rem center,
+                red 0 0.25rem,
+                transparent 0.25rem 100%
+              ),
+              radial-gradient(
+                circle at 2rem center,
+                orange 0 0.25rem,
+                transparent 0.25rem 100%
+              ),
+              radial-gradient(
+                circle at 3rem center,
+                lawngreen 0 0.25rem,
+                transparent 0.25rem 100%
+              );
+          }
+    }
+  }

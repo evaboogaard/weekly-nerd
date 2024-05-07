@@ -1,6 +1,7 @@
 @import 'nav.css';
 @import 'layout.css';
 @import 'svg.css';
+@import 'functions.css';
 
 *,
 *::after,
@@ -15,6 +16,7 @@
     --transition-base: .5s ease-out;
     --transition-short: .25s ease-out;
     --primary-color: rgb(95, 95, 95);
+    --light-gray: rgb(231, 231, 231);
 }
 
 body{
@@ -28,6 +30,11 @@ a{
     color: black;
 }
 
+button{
+  border: none;
+  background: none;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -37,4 +44,12 @@ a{
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+}
+
+input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }

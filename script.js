@@ -9,6 +9,7 @@ let callback = entries => {
   	const intersecting = entry.isIntersecting		
 		
         if(intersecting) {
+            const deSection = entry.target;
 			const huidigeSpreker = document.querySelector(".current");
             const nieuweSpreker = document.querySelector("[href='#" + deSection.id + "']");
 

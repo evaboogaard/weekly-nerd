@@ -1,0 +1,19 @@
+body:has(input[value="wafs"]:checked) label[for="wafs"] img,
+body:has(input[value="cssttr"]:checked) label[for="cssttr"] img,
+body:has(input[value="bt"]:checked) label[for="bt"] img,
+body:has(input[value="hcd"]:checked) label[for="hcd"] img,
+body:has(input[value="api"]:checked) label[for="api"] img{
+    scale: 1.5;
+}
+
+body:has(input[value="wafs"]:checked) .wafs.content,
+body:has(input[value="cssttr"]:checked) .cssttr.content,
+body:has(input[value="bt"]:checked) .bt.content,
+body:has(input[value="hcd"]:checked) .hcd.content,
+body:has(input[value="api"]:checked) .api.content{
+    display: flex;
+}
+
+/* body:has(input[value="wafs"]:checked) label[for="wafs"]{
+    width: 60vw;
+} */
