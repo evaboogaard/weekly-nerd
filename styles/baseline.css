@@ -53,3 +53,13 @@ input {
   height: 0;
   width: 0;
 }
+
+li{
+  list-style-position: inside;
+}
+
+ul{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
