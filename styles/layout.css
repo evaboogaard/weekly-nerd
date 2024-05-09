@@ -101,7 +101,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    max-width: 40vw;
+    width: clamp(20rem, 40vw, 40rem);
     background-color: white;
     padding: 2rem;
     height: fit-content;
@@ -219,7 +219,7 @@ main{
     justify-content: center;
 
     >div{
-        max-width: 50vw;
+        width: clamp(20rem, 50vw, 50rem);
         background-color: var(--light-gray);
         padding: 4rem;
         box-shadow: 0 0 3rem black;
