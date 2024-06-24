@@ -1,0 +1,10 @@
+.image-wrapper{
+    display: flex;
+    overflow-x: scroll;
+    gap: 1em;
+    align-items: center;
+
+    img{
+        height: 100%;
+    }
+}
